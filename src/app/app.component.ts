@@ -15,14 +15,12 @@ export class AppComponent implements OnInit {
  language: any;
  ngOnInit() {
   this.ipService.getIP().subscribe((ip: UserIP) =>
-    this.ipService.getUserIp(ip.ip)
+    this.ipService.getUserCountry(ip.ip)
       .subscribe(country => {
         this.userCountry = country;
-        let locale = this.locale.getRedirectURL(this.userCountry);
+        const locale = this.locale.getRedirectURL(this.userCountry);
         this.router.navigate(['/', locale])
-          .then( (e) => {
-           console.log(e);
-        });
+          .then( e => console.log(e));
       }));
  }
 }
