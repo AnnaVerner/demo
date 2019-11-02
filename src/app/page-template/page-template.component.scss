@@ -1,7 +1,5 @@
-:root {
-  --bg-color: #ffffff;
-  --font-color: #444444;
-}
+@import "~src/styles";
+@import "~src/app/mixins";
 
 p {
   background-color: var(--bg-color);

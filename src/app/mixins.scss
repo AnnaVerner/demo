@@ -1,0 +1,105 @@
+::ng-deep:root {
+  --bg-color: white ;
+  --green-color: #689F38;
+  --font-color: #444444;
+  --color-accent: #0D47A1;
+}
+@mixin centered-cover-image-background($url){
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin centered-cover-image($position){
+  background-position: $position;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin button($shadow, $hover-shadow, $color, $background-color){
+  @include no-decoration;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 2rem;
+  border-radius: 5px;
+  background-color: $background-color;
+  color: $color;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: box-shadow 1s;
+  box-shadow:$shadow;
+  &:hover{
+    box-shadow: $hover-shadow;
+  }
+}
+
+@mixin absolute-line($color,$width, $top, $right, $bottom, $left){
+  content: '';
+  background-color: $color;
+  height: 4px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: $bottom;
+  top: $top;
+  left: $left;
+  right: $right;
+  width: $width;
+}
+
+@mixin flex-container($padding, $direction, $align-items, $justify-content){
+  display: flex;
+  flex-direction: $direction;
+  box-sizing: border-box;
+  justify-content: $justify-content;
+  padding: $padding;
+  align-items: $align-items;
+}
+
+@mixin link($link, $visited, $hover, $active){
+  a{
+    color: $link;
+    outline: none;
+    &:visited{
+      color: $visited;
+    }
+    &:hover{
+      color: $hover;
+      cursor: pointer;
+    }
+    &:active{
+      color: $active;
+    }
+  }
+}
+
+@mixin no-decoration{
+  list-style-type: none;
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5{
+  font-weight: 400;
+}
+h6,p{
+  font-weight: 300;
+}
+h1{
+  font-size: 2.5rem;
+}
+h2{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.75rem;
+}
+h4{
+  font-size: 1.5rem;
+}
+h5{
+  font-size: 1.25rem;
+}
+h6, p{
+  font-size: 1rem;
+}

@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
         this.userCountry = country;
         const locale = this.locale.getRedirectURL(this.userCountry);
         this.router.navigate(['/', locale])
-          .then( e => console.log(e));
-      }));
+          .then( e => this.router.navigate(['/', 'en']));
+      }, error => this.router.navigate(['/', 'en'])));
  }
 }
 

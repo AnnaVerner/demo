@@ -1,0 +1,54 @@
+@import "~src/app/mixins";
+
+.menu__logo{
+  height: 50%;
+}
+.menu__container{
+  height: 80px;
+  @include flex-container(0 2rem, row, center, space-between);
+  border-bottom: 1px solid rgba(250,250,250,.2);
+}
+.menu__column{
+  @include flex-container(0, row, center, space-between);
+  height: 80%;
+}
+.menu__tab{
+  @include no-decoration;
+  @include link(white, white, white, white);
+}
+
+$thetransition: all .5s ease-in;
+
+.menu__link{
+  @include no-decoration;
+  padding: 30px 1rem;
+  cursor: pointer;
+  position: relative;
+  text-transform: capitalize;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--green-color);
+    visibility: hidden;
+
+    -webkit-transition: $thetransition;
+    transition: $thetransition;
+  }
+  &:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+}
+@media all and (max-width: 768px) {
+  .menu__container{
+    flex-direction: column;
+  }
+  .menu__column{
+    overflow: hidden;
+  }
+}

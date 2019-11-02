@@ -1,0 +1,31 @@
+<div class="employees__container" id="about">
+  <div class="employees__row column">
+    <h2 class="underline wow fadeInRight">Team</h2>
+    <p class="wow fadeIn">Meet our team!</p>
+  </div>
+  <div class="employees__row">
+    <div class="card wow fadeInUp" data-wow-duration="1000" *ngFor="let employee of employees;let i = index" [attr.data-wow-delay]='getDelay(i)'>
+      <div class="card-image waves-effect waves-block waves-light">
+        <div class="activator" [style.background]="'url('+employee.photo+')'"></div>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator ">{{employee.name.en}}
+        <i class="material-icons right">expand_more</i></span>
+        <div>
+          <p class="job-title">{{employee.title}} </p>
+        </div>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title" >{{employee.name.en}}<i class="material-icons right round">close</i></span>
+        <div class="item-row"><i class="material-icons icon">work</i><h6 class="item-heading">Skills</h6></div>
+        <div class="skill"><span class="skill" *ngFor="let skill of employee.skills">{{skill}}</span></div>
+        <div class="item-row"><i class="material-icons icon">description</i><h6 class="item-heading">Description</h6></div>
+        <p class="description">{{employee.description.en}}</p>
+        <div class="item-row"><i class="material-icons icon">business</i><h6 class="item-heading">Business Domains</h6>
+        </div>
+        <div class="skill"><span class='skill' *ngFor="let domain of employee.businessDomains">{{domain}}</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>

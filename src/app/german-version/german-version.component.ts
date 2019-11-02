@@ -7,9 +7,10 @@ import { ThemeService } from '../services/theme.service';
   styleUrls: ['../page-template/page-template.component.scss']
 })
 export class GermanVersionComponent implements OnInit {
-  title = 'German Version!'
-  constructor(private theme: ThemeService) { }
+  title = 'German Version!';
 
+
+  constructor(private theme: ThemeService) { }
   ngOnInit() {
   }
 

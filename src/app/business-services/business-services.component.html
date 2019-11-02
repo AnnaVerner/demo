@@ -1,0 +1,9 @@
+<h1 class="wow fadeInDown" id="business">Business domains</h1>
+<h5 class="wow fadeIn" data-wow-delay='0.5s'>Our real-world aspects of solutions include such areas as:</h5>
+<div class="row">
+  <div class="business__item  wow fadeInUp" [attr.data-wow-delay]="0.5*i+'s'" *ngFor="let domain of businessDomains; let i=index">
+    <div class="business__image"><img class="wow zoomIn" [src]="domain.src" alt="domain"></div>
+    <h4 >{{domain.name.en}}</h4>
+    <p >{{domain.description.en}}</p>
+  </div>
+</div>

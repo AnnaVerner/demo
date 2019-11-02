@@ -1,0 +1,46 @@
+@import "~src/app/mixins";
+:host{
+
+  background-color: var(--green-color);
+  color: white;
+  @include flex-container(2rem, column, center, center);
+}
+.row{
+  @include flex-container(0, row, flex-start, space-around);
+}
+.business__image{
+  margin: 0 auto 20px auto;
+  width: 100px;
+  height: 100px;
+
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,.3);
+  @include flex-container(0, column, center, center);
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  img{
+
+    margin: auto;
+    height: 50px;
+    width: 50px;
+  }
+}
+.business__item{
+  width: 30%;
+  text-align: center;
+  @include flex-container(0, column, center, flex-start);
+}
+h4{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+h5{
+  font-weight: 300;
+}
+p{
+  font-size: .9rem;
+  &:not(last-of-type){
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,51 @@
+@import "~src/app/mixins";
+.header__container{
+  @include flex-container(0, column, space-between, flex-start);
+  min-height: 100vh;
+  font-family: inherit;
+  height: 100vh;
+  line-height: 1.5;
+  position: relative;
+  @include centered-cover-image-background("/assets/img/background.jpg");
+  &>*{
+    z-index: 1;
+  }
+}
+.cover{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left:0;
+  z-index: -1;
+}
+
+.header__row{
+  color: white;
+  @include flex-container(0 2rem, column, flex-start, center);
+  height: 100%;
+}
+
+#typed{
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+::ng-deep .typed-cursor{
+  font-size: 2.5rem!important;
+}
+
+.button {
+  @include button(0 2px 5px rgba(0, 0, 0, .4), 0 2px 8px rgba(0, 0, 0, .6), #555, white);
+}
+h6.tag-heading{
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: -20px;
+  &::after{
+    @include absolute-line(var(--green-color), 60%, unset, unset, -20px, 0);
+  }
+}
