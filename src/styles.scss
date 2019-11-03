@@ -84,3 +84,29 @@ select {
     scroll-behavior: auto !important;
   }
 }
+#zcwMiniButton{
+  background-color: var(--green-color)!important;
+  width: 50px;
+  height: 50px;
+
+  &:before{
+    background-color: var(--green-color)!important;
+    width: 60px;
+    height: 60px;
+  }
+  &:after{
+    width: 30px;
+    height: 30px;
+    animation: scale 2s infinite alternate;
+  }
+}
+@keyframes scale {
+  0%{
+    width: 40px;
+    height: 40px;
+  }
+  100%{
+    width: 70px;
+    height: 70px;
+  }
+}

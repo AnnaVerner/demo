@@ -13,7 +13,10 @@ import { EmployeesComponent } from './employees/employees.component';
 import { BusinessServicesComponent } from './business-services/business-services.component';
 import { TechnologiesComponent } from './technologies/technologies.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { TabModule } from 'angular-tabs-component';
+import { ContactsComponent } from './contacts/contacts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +26,17 @@ import { NgxPageScrollModule } from 'ngx-page-scroll';
     GreetingComponent,
     EmployeesComponent,
     BusinessServicesComponent,
-    TechnologiesComponent
+    TechnologiesComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RoutingModule,
     NgwWowModule,
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    BrowserAnimationsModule,
+    TabModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,26 @@
 <div id="technologies" class="technology__container">
-  <div class="technology__column">
+  <div class="technology__column wow fadeInLeft">
     <img class="technology__column-image" src="./assets/img/technology.svg" alt="">
   </div>
-  <div class="technology__column">
-    <h1>Technologies</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda dicta, dolores eum harum id in iste maiores maxime minus, molestiae nam odio quasi quis sequi, velit veniam vero voluptatibus.</p>
-
+  <div class="technology__column wow fadeInRight">
+    <h2>Technologies</h2>
+    <div class="tabs__component">
+      <div class="tabs__container">
+        <div *ngFor="let item of technologies" [id]="item.name" class="tabs__item" [ngClass]="item.name == activeTab ?'active':'disabled'"(click)="showTabContent($event)">
+          <img [src]="item.src" alt="technology icon"> {{item.name}}
+        </div>
+      </div>
+      <div class="tabs__content " *ngFor="let item of technologies" [ngClass]="item.name == activeTab ?'animated fadeIn':''"
+           [style.display]="item.name == activeTab ? 'flex': 'none'">
+        <h5>For what do we use {{item.name}}?</h5>
+        <p>{{item.usage.en}}</p>
+        <h5>Why {{item.name}}? </h5>
+        <p>{{item.benefits.en}}</p>
+        <h5>Get more info about <a [href]="item.url" target="_blank"> {{item.name}} </a> </h5>
+      </div>
+    </div>
   </div>
+
+
 
 </div>

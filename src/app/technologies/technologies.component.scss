@@ -1,14 +1,88 @@
 @import "~materialize-css/dist/css/materialize.css";
 @import "~src/app/mixins";
-
 .technology__container{
+  width: 100%;
+  overflow: hidden;
   @include flex-container(2rem, row, center, space-between );
 }
 .technology__column{
+  h2{
+    margin-bottom: 40px;
+  }
   width: 50%;
   @include flex-container(0, column, center, center );
 }
+
 .technology__column-image{
   width: 100%;
   height: auto;
+}
+.technology__item{
+  position: relative;
+  @include flex-container(0, column, center, center );
+  margin: 1rem;
+
+}
+.technology__item-image{
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(120,120,120,.5);
+  height: 100px;
+  box-sizing: border-box;
+  transition: .5s;
+  padding: 30px;
+  &:hover{
+    cursor: pointer;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(120,120,120,.7);
+  }
+  img{
+    max-height: 60px;
+    max-width: 60px;
+    width: 100%;
+    height: 100%;
+  }
+}
+.tabs__container{
+  border-bottom: 1px solid #e0e0e0;
+  @include flex-container(0, row, flex-start, flex-start );
+  width: 100%;
+}
+.tabs__content{
+  width: 100%;
+  min-height: 250px;
+  @include flex-container( 10px 20px, column, flex-start, flex-start);
+  h5{
+    font-size: 1rem;
+  }
+  p{
+    font-size: .9rem;
+  }
+}
+.active{
+  border-bottom: 2px solid #3A7E35;
+  background-color: #A3C869;
+  color: white;
+}
+.disabled{
+  background-color: var(--bg-color);
+  border-bottom: none;
+}
+.tabs__component{
+  width: 90%;
+  @include flex-container(0, column, flex-start, flex-start);
+}
+.tabs__item{
+
+  @include flex-container(10px 20px, row, center, center );
+  transition: background-color .5s;
+  cursor: pointer;
+  img{
+    height: 20px;
+    max-height: 40vh;
+
+    width: 20px;
+    pointer-events: none;
+    margin-right: 10px;
+  }
 }

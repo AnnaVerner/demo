@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from '../app.component';
 import {GermanVersionComponent} from '../german-version/german-version.component';
 import {EnglishVersionComponent} from '../english-version/english-version.component';
+import {ContactsComponent} from '../contacts/contacts.component';
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',

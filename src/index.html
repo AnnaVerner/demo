@@ -5,9 +5,27 @@
   <title>Landing</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet'/>
+  <script type="text/javascript">
+      var ZCallbackWidgetLinkId  = '31204f280898014cc3ca12fc5926939e';
+      var ZCallbackWidgetDomain  = 'my.zadarma.com';
+      (function(){
+          var lt = document.createElement('script');
+          lt.type ='text/javascript';
+          lt.charset = 'utf-8';
+          lt.async = true;
+          lt.src = 'https://' + ZCallbackWidgetDomain + '/callbackWidget/js/main.min.js';
+          var sc = document.getElementsByTagName('script')[0];
+          if (sc) sc.parentNode.insertBefore(lt, sc);
+          else document.documentElement.firstChild.appendChild(lt);
+      })();
+  </script>
+
+
+
+
 </head>
 <body>
   <app-root>
