@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TabModule } from 'angular-tabs-component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     EmployeesComponent,
     BusinessServicesComponent,
     TechnologiesComponent,
-    ContactsComponent
+    ContactsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

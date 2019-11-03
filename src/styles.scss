@@ -3,6 +3,7 @@
 @import "app/mixins";
 html{
   font-family: 'Poppins', sans-serif;
+  color:var(--font-color);
 }
 
 *,
@@ -109,4 +110,11 @@ select {
     width: 70px;
     height: 70px;
   }
+}
+.mapboxgl-ctrl-attrib{
+  display: none;
+
+}
+.mapboxgl-ctrl-logo{
+  display: none!important;
 }

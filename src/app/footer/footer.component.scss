@@ -1,0 +1,46 @@
+@import "~src/app/mixins";
+footer{
+  @include flex-container(3rem 2rem 1rem 2rem, column,center,center);
+  background-color: #333;
+  color: #aaa;
+  line-height: 2;
+  font-weight: 300;
+}
+.column{
+  @include flex-container(1rem, column,flex-start,flex-start);
+  width: 30%;
+}
+h5{
+  margin-bottom: 15px;
+  color:#e0e0e0;
+  margin-top: 0;
+}
+hr{
+  width: 100%;
+  border: none;
+  margin-bottom: 1rem;
+  background-color: #777777;
+  height: 1px;
+}
+.row{
+  @include flex-container(0, row,flex-start,space-between);
+  width: 100%;
+}
+h6{
+  margin: 0;
+  text-transform: capitalize;
+
+  font-size: .9rem;
+}
+p{
+  font-size: .9rem;
+}
+a{
+  @include no-decoration;
+  color:#aaa;
+}
+.centered{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

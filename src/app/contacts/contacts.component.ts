@@ -1,39 +1,61 @@
 import { Component, OnInit } from '@angular/core';
+import * as mapboxgl from 'mapbox-gl';
 declare let L;
+import { token } from 'src/environments/environment.prod';
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
-  constructor() { }
+  map: mapboxgl.Map;
+  style = 'mapbox://styles/mapbox/light-v10';
+  email = 'hello@autom8now.com';
+  disabled = true;
+  URL = `https://formspree.io/${this.email}`;
+  lng = 30.5238;
+  lat = 50.45466;
 
+  validate(event){
+    // @ts-ignore
+    if (document.getElementById('form').checkValidity()){
+      this.disabled = false;
+    } else {
+      this.disabled = true;
+    }
+  }
+  geojson = [
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [this.lng, this.lat]
+      },
+      properties: {
+        'marker-color': '689F38',
+        title: 'We are here :)',
+        description: 'Come and visit!'
+      }
+    }
+  ];
+  constructor() { }
   ngOnInit() {
 
-    var geojson = [
-      {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [30.4, 50.4]
-        },
-        properties: {
-          'marker-color': '2196F3',
-          title: 'visit iur office',
-          description: 'office address'
-        }
-      }
-    ];
 
-    L.mapbox.accessToken = 'pk.eyJ1IjoiZGlhbnRodXMiLCJhIjoiY2pramlpanY2MTh4ZzNwdWs3dHJwNHp3ciJ9.G4MHcw-JI6voQ8PX0divEg';
-    var mapGeo = L.mapbox.map('map_geo', 'mapbox.light')
-      .setView([50.446689, 30.49522426], 20);
+    mapboxgl.accessToken = token.key;
+    this.map = new mapboxgl.Map({
+      container: 'map',
+      style: this.style,
+      zoom: 12,
+      center: [this.lng, this.lat]
+    });
+    // Add map controls
 
-    var myLayer = L.mapbox.featureLayer().setGeoJSON(geojson).addTo(mapGeo);
-    mapGeo.scrollWheelZoom.disable();
-    L.mapbox.styleLayer('mapbox://styles/mapbox/light-v9').addTo(mapGeo);
-    document.getElementsByClassName('leaflet-control-container')[0].firstChild.className = "leaflet-top leaflet-right";
-
+    let marker = new mapboxgl.Marker({color:'#689F38'})
+      .setLngLat([this.lng, this.lat])
+      .addTo(this.map);
+    this.map.addControl(new mapboxgl.NavigationControl());
   }
 
 }

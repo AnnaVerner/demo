@@ -1,6 +1,9 @@
 ::ng-deep:root {
   --bg-color: white ;
   --green-color: #689F38;
+  --orange-color: #FFB300;
+  --red-color: #ef5350;
+  --dark-green-color: #388E3C;
   --font-color: #444444;
   --color-accent: #0D47A1;
 }
@@ -100,6 +103,9 @@ h4{
 h5{
   font-size: 1.25rem;
 }
-h6, p{
+h6{
   font-size: 1rem;
+}
+p{
+  font-size: .9rem;
 }

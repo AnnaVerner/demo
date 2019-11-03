@@ -3,7 +3,7 @@
 .technology__container{
   width: 100%;
   overflow: hidden;
-  @include flex-container(2rem, row, center, space-between );
+  @include flex-container(4rem 2rem, row, center, space-between );
 }
 .technology__column{
   h2{
