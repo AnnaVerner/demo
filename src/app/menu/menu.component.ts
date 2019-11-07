@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, Inject, OnInit} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  menuOffset = false;
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (document.body.scrollTop > 0 ||
+      document.documentElement.scrollTop > 0) {
+      document.getElementById('menu').classList.add('menu__offset');
+    }else {
+      document.getElementById('menu').classList.remove('menu__offset');
+    }
   }
 
 }

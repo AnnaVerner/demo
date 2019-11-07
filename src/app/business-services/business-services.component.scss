@@ -44,3 +44,14 @@ p{
     margin-bottom: 20px;
   }
 }
+@media all and (max-width: 768px){
+  .row{
+    flex-wrap: wrap;
+  }
+  .business__item{
+    width: 100%;
+  }
+  h5{
+    text-align: center;
+  }
+}

@@ -1,22 +1,23 @@
-<nav class="menu__container">
+<nav class="menu__container" id="menu" [ngClass]="{'menu__offset': menuOffset}">
   <div class="menu__column">
     <img class="menu__logo" src="./assets/img/logo.png" alt="logo">
   </div>
   <ul class="menu__column">
     <li class="menu__tab">
-      <a class="menu__link" pageScroll [pageScrollDuration]="500" href="#about">about</a>
+      <a class="menu__link" pageScroll [pageScrollDuration]="500" [pageScrollOffset]="80" href="#about">about</a>
     </li>
     <li class="menu__tab">
-      <a class="menu__link" pageScroll [pageScrollDuration]="500" href="#business">business</a>
+      <a class="menu__link" pageScroll [pageScrollDuration]="500" [pageScrollOffset]="80" href="#business">business</a>
     </li>
     <li class="menu__tab">
-      <a class="menu__link" pageScroll [pageScrollDuration]="500" href="#technologies">technologies</a>
+      <a class="menu__link" pageScroll [pageScrollDuration]="500" [pageScrollOffset]="80" href="#technologies">technologies</a>
     </li>
     <li class="menu__tab">
-      <a class="menu__link" pageScroll [pageScrollDuration]="500" href="#contacts">contacts</a>
+      <a class="menu__link" pageScroll [pageScrollDuration]="500" [pageScrollOffset]="80" href="#contacts">contacts</a>
     </li>
     <li class="menu__tab">
-      <a class="menu__link" pageScroll [pageScrollDuration]="500" href="#cooperation">cooperation</a>
+      <a class="menu__link" pageScroll [pageScrollDuration]="500"  [pageScrollOffset]="80" href="#cooperation">cooperation</a>
     </li>
   </ul>
+  <img src="" alt="" class="menu__btn">
 </nav>

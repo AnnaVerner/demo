@@ -4,33 +4,34 @@
     <h2>Start a project with us</h2>
     <p>Accusantium, aperiam blanditiis cupiditate deserunt dolor ducimus ea facere illo laborum molestias natus nulla placeat praesentium recusandae sed! Atque dicta fuga libero.</p>
     <form id="form" #form [action]="URL" method="post" action="" ngNativeValidate>
-    <div class="row">
-      <div class="input-field">
-        <i class="material-icons prefix">account_circle</i>
-        <input id="icon_prefix" type="text" (input)="validate($event)" class="validate" pattern="^[a-zA-Z ]*$" ngModel required>
-        <label for="icon_prefix">Name</label>
+      <div class="row">
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" (input)="validate($event)" class="validate" pattern="^[a-zA-Z ]*$" ngModel required>
+          <label for="icon_prefix">Name</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_email" type="email" (input)="validate($event)" class="validate" ngModel required>
+          <label for="icon_email">Email</label>
+        </div>
       </div>
-      <div class="input-field">
-        <i class="material-icons prefix">email</i>
-        <input id="icon_email" type="email" (input)="validate($event)" class="validate" ngModel required>
-        <label for="icon_email">Email</label>
+      <div class="row">
+        <div class="input-field textarea">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_message" (input)="validate($event)" class="validate materialize-textarea" ngModel required></textarea>
+          <label for="icon_message">Message</label>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field textarea">
-        <i class="material-icons prefix">mode_edit</i>
-        <textarea id="icon_message" (input)="validate($event)" class="validate materialize-textarea" ngModel required></textarea>
-        <label for="icon_message">Message</label>
+      <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" [disabled]="disabled" (click)="form.submit()"name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
       </div>
-    </div>
-
-    <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" [disabled]="disabled" (click)="form.submit()"name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  </form>
+    </form>
   </div>
+
+
   <div class="contacts__column no-padding wow fadeInRight">
     <div id="map"></div>
   </div>

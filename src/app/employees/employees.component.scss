@@ -118,3 +118,17 @@
     color: var(--green-color)!important;
   }
 }
+
+@media all and(max-width: 768px) {
+  .employees__row {
+    flex-wrap: wrap;
+  }
+  ::ng-deep div.card{
+    height: 100%;
+    width: 100%;
+  }
+}
+.menu__container{
+  z-index: 100000000000000000000000;
+  mix-blend-mode: normal;
+}

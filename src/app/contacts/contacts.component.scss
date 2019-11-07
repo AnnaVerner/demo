@@ -100,3 +100,27 @@ h2{
 p{
   margin-bottom: 20px;
 }
+form {
+  width: 100%;
+}
+@media all and (max-width: 768px){
+  .contacts__container{
+    flex-wrap: wrap;
+    flex-direction: row-reverse!important;
+  }
+  .contacts__column{
+    width: 100% !important;
+  }
+  div.row{
+    flex-wrap: wrap!important;
+  }
+
+  div.input-field{
+    width: 100%!important;
+  }
+
+  div#map{
+    min-height: 200px;
+    height: auto;
+  }
+}

@@ -1,5 +1,6 @@
 ::ng-deep:root {
   --bg-color: white ;
+  --footer-bg-color: #333;
   --green-color: #689F38;
   --orange-color: #FFB300;
   --red-color: #ef5350;
@@ -7,8 +8,7 @@
   --font-color: #444444;
   --color-accent: #0D47A1;
 }
-@mixin centered-cover-image-background($url){
-  background-image: url($url);
+@mixin centered-cover-image-background{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -108,4 +108,28 @@ h6{
 }
 p{
   font-size: .9rem;
+}
+@media all and (max-width: 768px){
+
+  h1{
+    font-size: 2rem;
+  }
+  h2{
+    font-size: 1.75rem;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+  h4{
+    font-size: 1.25rem;
+  }
+  h5{
+    font-size: 1.15rem;
+  }
+  h6{
+    font-size: 1rem;
+  }
+  p{
+    font-size: .9rem;
+  }
 }

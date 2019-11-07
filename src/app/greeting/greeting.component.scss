@@ -1,12 +1,15 @@
 @import "~src/app/mixins";
+
 .header__container{
   @include flex-container(0, column, space-between, flex-start);
   min-height: 100vh;
   font-family: inherit;
   height: 100vh;
+  padding-top: 100px;
   line-height: 1.5;
   position: relative;
-  @include centered-cover-image-background("/assets/img/background.jpg");
+  @include centered-cover-image-background;
+  background-image: url("~src/assets/img/background.jpg");
   &>*{
     z-index: 1;
   }

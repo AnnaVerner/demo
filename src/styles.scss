@@ -118,3 +118,10 @@ select {
 .mapboxgl-ctrl-logo{
   display: none!important;
 }
+
+@media all  and (max-width: 768px){
+  .z-widget-simple-btn{
+    bottom: 10px!important;
+    right: 10px!important;
+  }
+}

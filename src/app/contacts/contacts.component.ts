@@ -43,6 +43,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
 
 
+    // @ts-ignore
     mapboxgl.accessToken = token.key;
     this.map = new mapboxgl.Map({
       container: 'map',

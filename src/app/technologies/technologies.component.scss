@@ -86,3 +86,14 @@
     margin-right: 10px;
   }
 }
+@media all and (max-width: 768px){
+  .technology__container{
+    flex-wrap: wrap;
+  }
+  .technology__column{
+    width: 100%;
+  }
+  .technology__column-image{
+    width: 100%;
+  }
+}

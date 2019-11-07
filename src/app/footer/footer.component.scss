@@ -1,7 +1,7 @@
 @import "~src/app/mixins";
 footer{
   @include flex-container(3rem 2rem 1rem 2rem, column,center,center);
-  background-color: #333;
+  background-color: var(--footer-bg-color);
   color: #aaa;
   line-height: 2;
   font-weight: 300;
@@ -43,4 +43,14 @@ a{
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+@media all and (max-width: 768px){
+
+  div.row{
+    flex-wrap: wrap!important;
+  }
+  div.column{
+    width: 100%;
+  }
 }
